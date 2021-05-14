@@ -6,35 +6,35 @@ const app = http.createServer(function (req, res) {
 })
 app.listen(3000)
 
-const puppeteer = require('puppeteer')
+// const puppeteer = require('puppeteer')
 
-const URL = 'http://loterias.caixa.gov.br/wps/portal/loterias/landing'
+// const URL = 'http://loterias.caixa.gov.br/wps/portal/loterias/landing'
 
-async function execute() {
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
-  const page = await browser.newPage()
-  await page.goto(URL)
+// async function execute() {
+//   const browser = await puppeteer.launch({
+//     args: ['--no-sandbox', '--disable-setuid-sandbox']
+//   })
+//   const page = await browser.newPage()
+//   await page.goto(URL)
 
-  const data = await page.evaluate(() => {
-    const results = []
-    const items = document.querySelectorAll('.lotofacil td')
-    items.forEach(({ innerHTML }) => results.push(innerHTML))
+//   const data = await page.evaluate(() => {
+//     const results = []
+//     const items = document.querySelectorAll('.lotofacil td')
+//     items.forEach(({ innerHTML }) => results.push(innerHTML))
 
-    const description = document.querySelector(
-      '.lotofacil ~ p.description'
-    ).innerText
+//     const description = document.querySelector(
+//       '.lotofacil ~ p.description'
+//     ).innerText
 
-    return {
-      results,
-      description
-    }
-  })
+//     return {
+//       results,
+//       description
+//     }
+//   })
 
-  console.log({ data })
+//   console.log({ data })
 
-  await browser.close()
-}
+//   await browser.close()
+// }
 
-execute()
+// execute()
