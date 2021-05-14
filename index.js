@@ -3,7 +3,9 @@ const puppeteer = require('puppeteer')
 const URL = 'http://loterias.caixa.gov.br/wps/portal/loterias/landing'
 
 async function execute() {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  })
   const page = await browser.newPage()
   await page.goto(URL)
 
