@@ -1,3 +1,11 @@
+const http = require('http')
+
+const app = http.createServer(function (req, res) {
+  res.setHeader('Content-Type', 'application/json')
+  res.end(JSON.stringify({ a: 1 }))
+})
+app.listen(3000)
+
 const puppeteer = require('puppeteer')
 
 const URL = 'http://loterias.caixa.gov.br/wps/portal/loterias/landing'
