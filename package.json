@@ -1,0 +1,11 @@
+{
+  "name": "lottery-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gustavomanca/lottery-scraper.git",
+  "author": "Gustavo Manca <gustavo.manca@fatec.sp.gov.br>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^9.1.1"
+  }
+}
