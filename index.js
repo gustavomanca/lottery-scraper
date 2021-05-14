@@ -37,3 +37,5 @@ const app = http.createServer(async function (_, res) {
 
   res.end(JSON.stringify(data))
 })
+
+app.listen(process.env.PORT || 5000)
