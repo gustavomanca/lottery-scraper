@@ -5,6 +5,8 @@ const puppeteer = require('puppeteer')
 const URL = 'http://loterias.caixa.gov.br/wps/portal/loterias/landing'
 
 async function scrap() {
+  console.time('scraping')
+
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
@@ -27,6 +29,7 @@ async function scrap() {
   })
   await browser.close()
 
+  console.timeEnd('scraping')
   return data
 }
 
